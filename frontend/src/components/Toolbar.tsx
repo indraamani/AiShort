@@ -1,5 +1,5 @@
 import { Menu, X } from "lucide-react"
-import Logo from "../assets/logo.svg"
+// import Logo from "../assets/logo.svg"
 import { useState } from "react"
 
 function Toolbar() {
@@ -10,7 +10,7 @@ function Toolbar() {
     <nav className="h-14 m-4 md:flex lg:w-[70dvw] w-[95%] mx-auto bg-black/50 backdrop-blur-md border border-white/4 rounded-2xl p-3">
 
       <div className="icon h-full mx-4 flex justify-between items-center">
-        <img src={Logo} alt="Logo" />
+        <img src={""} alt="Logo" />
         <Menu color="white" className="md:hidden" onClick={_=> setPhoneMenu(true)}/>
       </div>
 
