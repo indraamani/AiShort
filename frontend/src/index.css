@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+/* .slide-track {
+    animation: carousel 4s linear infinite;
+    width: calc(250px * 14);
+}
+
+@keyframes carousel {
+    0% {
+        transform: translateX(215px);
+    }
+    100% {
+        transform: translateX(calc(-250px * 5.6));
+    }
+} */
