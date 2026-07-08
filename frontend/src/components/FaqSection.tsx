@@ -4,7 +4,7 @@ import SectionTitle from "./SectionTitle";
 export const FaqSection = () => {
     const [openIndex, setOpenIndex] = useState(null);
     return (
-        <div className="relative max-w-2xl mx-auto flex flex-col items-center justify-center px-4 md:px-0">
+        <div id="faqsection" className="relative max-w-2xl mx-auto flex flex-col items-center justify-center px-4 md:px-0">
             <img className="absolute -mb-120 -left-40 -z-10 pointer-events-none" src="/assets/color-splash.svg"alt="color-splash" width={1000} height={1000} fetchPriority="high" />
             <SectionTitle text1="FAQ's" text2="Frequently asked questions" text3="Ship Beautiful Frontends Without the Overhead — Customizable, Scalable, and Developer-Friendly UI Components." />
             <div className="mt-8">

@@ -9,13 +9,13 @@ import { Signin } from './pages/Signin'
 import Login from './pages/Login'
 
 import "./index.css"
+import Background from './components/Background'
 
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <>
-      <Toolbar />
-
+      <Background />
       <BrowserRouter >
         <Routes>
           <Route path='/' element={<Home />} />
@@ -23,7 +23,6 @@ createRoot(document.getElementById('root')!).render(
           <Route path='/login' element={<Login />} />
         </Routes>
       </BrowserRouter>
-      <Footer />
     </>
   </StrictMode>,
 )

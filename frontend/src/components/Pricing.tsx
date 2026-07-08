@@ -3,11 +3,11 @@ import SectionTitle from "./SectionTitle";
 
 export default function Pricing() {
     return (
-        <div className="relative">
-            <img className="absolute -mt-20 md:-mt-100 md:left-20 pointer-events-none" src="../assets/color-splash.svg" alt="color-splash" width={1000} height={1000} fetchPriority="high" />
-            <SectionTitle text1="PRICING" text2="Our Pricing Plans" text3="Flexible pricing options designed to meet your needs — whether you're just getting started or scaling up." />
+        <div  className="relative">
+            <img id="pricingsection" className="absolute -mt-20 md:-mt-100 md:left-20 pointer-events-none" src="../assets/color-splash.svg" alt="color-splash" width={1000} height={1000} fetchPriority="high" />
+            <SectionTitle  text1="PRICING" text2="Our Pricing Plans" text3="Flexible pricing options designed to meet your needs — whether you're just getting started or scaling up." />
 
-            <div className="flex flex-wrap items-center justify-center gap-6 mt-16">
+            <div  className="flex flex-wrap items-center justify-center gap-6 mt-16">
                 {/* {pricingData.map((plan, index) => (
                     <div key={index} className={`p-6 rounded-2xl max-w-75 w-full shadow-[0px_4px_26px] shadow-black/6 ${plan.mostPopular ? "relative pt-12 bg-gradient-to-b from-indigo-600 to-violet-600" : "bg-white/50 dark:bg-gray-800/50 border border-slate-200 dark:border-slate-800"}`}>
                         {plan.mostPopular && (
