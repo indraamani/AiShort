@@ -1,11 +1,11 @@
-import React from 'react'
-import Toolbar from '../components/Toolbar'
+import { SignIn } from "@clerk/react"
 
 function Login() {
   return (
-      <div>
-
-
+      <div className="h-dvh flex justify-center items-center">
+        <SignIn
+          signUpUrl="/signup"
+        />
     </div>
   )
 }
