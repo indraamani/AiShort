@@ -31,9 +31,6 @@ function Toolbar() {
         </button>
       </div>
       <div className="flex items-center gap-4 ">
-        <button className="flex items-center justify-center size-9 p-2 rounded-full bg-slate-950/5 hover:bg-slate-950/10 dark:bg-white/10 dark:hover:bg-white/20 transition-colors duration-200 ease-in-out">
-          <Sun color="white"/>
-        </button>
         <button onClick={_=>navigate('/login')} className="hidden md:block hover:bg-slate-100 dark:hover:bg-purple-400 transition px-4 py-2 border border-purple-600 rounded-md text-white">
           Login In
         </button>

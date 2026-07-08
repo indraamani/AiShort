@@ -1,14 +1,16 @@
-import { SparklesIcon } from "lucide-react";
+import { Check, SparklesIcon } from "lucide-react";
 import SectionTitle from "./SectionTitle";
+import BgImg from "../assets/color-splash.svg"
+import { pricingData } from "../utiles/pricing";
 
 export default function Pricing() {
     return (
-        <div  className="relative">
-            <img id="pricingsection" className="absolute -mt-20 md:-mt-100 md:left-20 pointer-events-none" src="../assets/color-splash.svg" alt="color-splash" width={1000} height={1000} fetchPriority="high" />
+        <div  className="relative text-center max-w-2xl mx-auto  px-4 md:px-0">
+            <img id="pricingsection" className="absolute z-[-1] md:left-20 pointer-events-none object-cover" src={BgImg} alt="color-splash" />
             <SectionTitle  text1="PRICING" text2="Our Pricing Plans" text3="Flexible pricing options designed to meet your needs — whether you're just getting started or scaling up." />
 
             <div  className="flex flex-wrap items-center justify-center gap-6 mt-16">
-                {/* {pricingData.map((plan, index) => (
+                {pricingData.map((plan, index) => (
                     <div key={index} className={`p-6 rounded-2xl max-w-75 w-full shadow-[0px_4px_26px] shadow-black/6 ${plan.mostPopular ? "relative pt-12 bg-gradient-to-b from-indigo-600 to-violet-600" : "bg-white/50 dark:bg-gray-800/50 border border-slate-200 dark:border-slate-800"}`}>
                         {plan.mostPopular && (
                             <div className="flex items-center text-xs gap-1 py-1.5 px-2 text-purple-600 absolute top-4 right-4 rounded bg-white font-medium">
@@ -16,14 +18,14 @@ export default function Pricing() {
                                 <p>Most Popular</p>
                             </div>
                         )}
-                        <p className={plan.mostPopular && "text-white"}>{plan.title}</p>
-                        <h4 className={`text-3xl font-semibold mt-1 ${plan.mostPopular && "text-white"}`}>${plan.price}<span className={`font-normal text-sm ${plan.mostPopular ? "text-white" : "text-slate-300"}`}>/mo</span></h4>
+                        <p className="text-white">{plan.title}</p>
+                        <h4 className={`text-3xl font-semibold mt-1 text-white`}>${plan.price}<span className={`font-normal text-sm text-white`}>/mo</span></h4>
                         <hr className={`my-8 ${plan.mostPopular ? "border-gray-300" : "border-slate-300 dark:border-slate-700"}`} />
                         <div className={`space-y-2 ${plan.mostPopular ? "text-white" : "text-slate-600 dark:text-slate-300"}`}>
                             {plan.features.map((feature, index) => (
                                 <div key={index} className="flex items-center gap-1.5">
-                                    <feature.icon size={18} className={`${plan.mostPopular ? "text-white" : "text-purple-600"}`} />
-                                    <span>{feature.name}</span>
+                                    <Check size={18} className={`${plan.mostPopular ? "text-white" : "text-purple-600"}`} />
+                                    <span>{feature}</span>
                                 </div>
                             ))}
                         </div>
@@ -31,7 +33,7 @@ export default function Pricing() {
                             <span>{plan.buttonText}</span>
                         </button>
                     </div>
-                ))} */}
+                ))}
             </div>
         </div>
     );
