@@ -9,6 +9,7 @@ import Login from './pages/Login'
 import "./index.css"
 import Background from './components/Background'
 import { ClerkProvider } from '@clerk/react'
+import Generate from './pages/Generate'
 
 
 createRoot(document.getElementById('root')!).render(
@@ -20,6 +21,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path='/' element={<Home />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/generate' element={<Generate />} />
         </Routes>
       </BrowserRouter>
     </ClerkProvider>
