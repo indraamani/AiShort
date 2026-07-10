@@ -11,6 +11,7 @@ import Background from './components/Background'
 import { ClerkProvider } from '@clerk/react'
 import Generate from './pages/Generate'
 import Community from './pages/Community'
+import MyGeneration from './pages/MyGeneration'
 
 
 createRoot(document.getElementById('root')!).render(
@@ -24,6 +25,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path='/login' element={<Login />} />
           <Route path='/generate' element={<Generate />} />
           <Route path='/community' element={<Community />} />
+          <Route path='/mygeneration' element={<MyGeneration />} />
         </Routes>
       </BrowserRouter>
     </ClerkProvider>
