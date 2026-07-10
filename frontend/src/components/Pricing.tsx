@@ -5,7 +5,7 @@ import { pricingData } from "../utiles/pricing";
 
 export default function Pricing() {
     return (
-        <div  className="relative text-center max-w-2xl mx-auto  px-4 md:px-0">
+        <div id="pricing" className="relative text-center max-w-2xl mx-auto  px-4 md:px-0">
             <img id="pricingsection" className="absolute z-[-1] md:left-20 pointer-events-none object-cover" src={BgImg} alt="color-splash" />
             <SectionTitle  text1="PRICING" text2="Our Pricing Plans" text3="Flexible pricing options designed to meet your needs — whether you're just getting started or scaling up." />
 
