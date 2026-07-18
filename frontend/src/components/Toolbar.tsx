@@ -1,3 +1,5 @@
+import { ClerkProvider, UserButton } from "@clerk/clerk-react"
+import { useUser } from "@clerk/react"
 import { Menu, Sun, X } from "lucide-react"
 //import Logo from "../assets/logo.svg"
 import { useState } from "react"
@@ -7,8 +9,11 @@ function Toolbar() {
 
   const [phoneMenu, setPhoneMenu] = useState<boolean>(false)
   const navigate = useNavigate()
+  const user = useUser()
 
   return (
+    <ClerkProvider
+        publishableKey={import.meta.env.VITE_CLERK_PUBLISHABLE_KEY} > 
     <nav className="flex items-center justify-between fixed z-50 top-0 w-full px-6 md:px-16 lg:px-24 xl:px-32 py-4 backdrop-blur">
       <a href="">
         <img src="https://landing.prebuiltui.com/assets/logo-light.svg" alt="" className="bg-transparent h-9 md:h-9.5 w-auto shrink-0" />
@@ -26,20 +31,35 @@ function Toolbar() {
         <a href="/community" className="hover:text-slate-600 dark:hover:text-slate-300">Community</a>
         <a href="/#pricing" className="hover:text-slate-600 dark:hover:text-slate-300">Plans</a>
 
-        <button onClick={_=> setPhoneMenu(false)} className="aspect-square size-10 p-1 items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-md flex">
+        <button onClick={() => setPhoneMenu(false)} className="aspect-square size-10 p-1 items-center justify-center bg-purple-600 hover:bg-purple-700 transition text-white rounded-md flex">
           <X />
         </button>
       </div>
-      <div className="flex items-center gap-4 ">
-        <button onClick={_=>navigate('/login')} className="hidden md:block hover:bg-slate-100 dark:hover:bg-purple-400 transition px-4 py-2 border border-purple-600 rounded-md text-white">
+      { !user.user ? 
+      (<div className="flex items-center gap-4 ">
+        <button onClick={() =>navigate('/login')} className="hidden md:block hover:bg-slate-100 dark:hover:bg-purple-400 transition px-4 py-2 border border-purple-600 rounded-md text-white">
           Login In
         </button>
-        <button onClick={_=>navigate('/signup')} className="hidden md:block px-4 py-2 bg-purple-600 hover:bg-purple-700 transition text-white rounded-md">Get Started</button>
-        <button onClick={_=> setPhoneMenu(true)} className="md:hidden flex items-center justify-center size-9 p-2 rounded-full bg-slate-950/5 hover:bg-slate-950/10 dark:bg-white/10 dark:hover:bg-white/20 transition-colors duration-200 ease-in-out">
+        <button onClick={() =>navigate('/signup')} className="hidden md:block px-4 py-2 bg-purple-600 hover:bg-purple-700 transition text-white rounded-md">Get Started</button>
+        <button onClick={() => setPhoneMenu(true)} className="md:hidden flex items-center justify-center size-9 p-2 rounded-full bg-slate-950/5 hover:bg-slate-950/10 dark:bg-white/10 dark:hover:bg-white/20 transition-colors duration-200 ease-in-out">
           <Menu color="white" />
         </button>
-      </div>
+      </div>) 
+      : (
+          <div>
+            <div className="flex gap-4">
+                <button onClick={_=>navigate("/")} className="border-none text-gray-300 sm:py-1.5">
+                    Credits:{24} 
+                </button>
+                <UserButton>
+
+                </UserButton>
+            </div>
+          </div>
+      )
+      }
     </nav>
+    </ClerkProvider>
   )
 }
 

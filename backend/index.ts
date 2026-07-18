@@ -1,6 +1,6 @@
 import "./src/configs/instrument.js"
 import express from "express";
-import dotenv from "dotenv/config"
+import "dotenv/config"
 import cors from "cors"
 import { clerkMiddleware } from "@clerk/express";
 import * as Sentry from "@sentry/node"

@@ -13,10 +13,15 @@ import Generate from './pages/Generate'
 import Community from './pages/Community'
 import MyGeneration from './pages/MyGeneration'
 
-
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ClerkProvider publishableKey={import.meta.env.VITE_CLERK_PUBLISHABLE_KEY}>
+    <ClerkProvider 
+        publishableKey={import.meta.env.VITE_CLERK_PUBLISHABLE_KEY}
+        appearance={{
+            variables: {
+                colorPrimary: "#4f39f6",
+            }
+        }}>
       <Background />
       <BrowserRouter >
         <Routes>
